@@ -5,4 +5,18 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="answers\" />
+    <None Remove="input\" />
+    <None Remove="Common\" />
+    <None Remove="answers\Problems\" />
+    <None Remove="answers\Problems\Problem 1\" />
+    <None Remove="Answers\Problem 1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Answers\" />
+    <Folder Include="Input\" />
+    <Folder Include="Common\" />
+    <Folder Include="Answers\Problem 1\" />
+  </ItemGroup>
 </Project>
