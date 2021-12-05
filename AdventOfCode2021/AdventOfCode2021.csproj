@@ -11,12 +11,16 @@
     <None Remove="Common\" />
     <None Remove="answers\Problems\" />
     <None Remove="answers\Problems\Problem 1\" />
-    <None Remove="Answers\Problem 1\" />
+    <None Remove="Problems\" />
+    <None Remove="Problems\Problem 1\" />
+    <None Remove="Problems\Problem 1 %28copy%29\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Answers\" />
     <Folder Include="Input\" />
     <Folder Include="Common\" />
-    <Folder Include="Answers\Problem 1\" />
+    <Folder Include="Problems\" />
+    <Folder Include="Problems\Problem 1\" />
+    <Folder Include="Problems\Problem 2\" />
   </ItemGroup>
 </Project>

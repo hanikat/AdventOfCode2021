@@ -32,7 +32,7 @@ namespace AdventOfCode2021
 
             // print the result of program execution
             Console.WriteLine($"The problem was solved in {watch.ElapsedMilliseconds} ms");
-            Console.WriteLine($"The solution to the problem is: ${problemToSolve.GetAnswer()}");
+            Console.WriteLine($"The solution to the problem is: {problemToSolve.GetAnswer()}");
         }
 
 

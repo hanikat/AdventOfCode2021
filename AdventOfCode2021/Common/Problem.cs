@@ -50,7 +50,9 @@ namespace AdventOfCode2021.Common
 
         public void GetInputFromFile()
         {
-            string expectedFilePath = Path.Combine(Directory.GetCurrentDirectory(), $"/Input/Problem{ProblemNumber}-input.txt");
+            string currentDirectoryPath = Directory.GetCurrentDirectory();
+            string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("/bin"));
+            string expectedFilePath = Path.Combine(solutionDirectoryPath, $"Input/Problem{ProblemNumber}-input.txt");
             if(!File.Exists(expectedFilePath))
             {
                 throw new Exception($"The expected input file was not found at path: {expectedFilePath}");
@@ -83,7 +85,9 @@ namespace AdventOfCode2021.Common
 
         private void WriteAnswerToFile(string answer)
         {
-            string resultFilePath = Path.Combine(Directory.GetCurrentDirectory(), $"/Answers/Problem{ProblemNumber}-answer.txt");
+            string currentDirectoryPath = Directory.GetCurrentDirectory();
+            string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("/bin"));
+            string resultFilePath = Path.Combine(solutionDirectoryPath, $"Answers/Problem{ProblemNumber}-answer.txt");
             File.WriteAllText(resultFilePath, answer, System.Text.Encoding.UTF8);
         }
 
