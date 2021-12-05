@@ -1,5 +1,4 @@
 ﻿using System;
-using AdventOfCode2021.Answers.Problems;
 using AdventOfCode2021.Common;
 using System.Linq;
 using System.Collections.Generic;
@@ -16,7 +15,7 @@ namespace AdventOfCode2021
             Console.WriteLine("----- ----- ------");
 
             // prompt the user for which problem to solve
-            var problems = Problem.EnumerateProblems<Problem>().ToList();
+            var problems = Utility.EnumerateProblems<Problem>().ToList();
             int problemNumberToSolve = GetSelectedProblem(problems);
             Problem problemToSolve = problems[problemNumberToSolve];
 

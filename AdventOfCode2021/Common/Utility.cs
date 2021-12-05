@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace AdventOfCode2021.Common
 {
@@ -28,6 +30,19 @@ namespace AdventOfCode2021.Common
             }
 
             return listOfIntegers;
+        }
+
+        public static IEnumerable<T> EnumerateProblems<T>() where T : Problem
+        {
+            List<T> problems = new List<T>();
+            foreach (Type type in
+                Assembly.GetAssembly(typeof(T)).GetTypes()
+                .Where(myType => myType.IsClass && !myType.IsAbstract && myType.IsSubclassOf(typeof(T))))
+            {
+                problems.Add((T)Activator.CreateInstance(type));
+            }
+            problems.OrderBy(p => p.ProblemNumber);
+            return problems;
         }
     }
 }

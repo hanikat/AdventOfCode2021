@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 
 namespace AdventOfCode2021.Common
 {
@@ -17,6 +14,9 @@ namespace AdventOfCode2021.Common
 
         protected abstract string GetSolution();
 
+        /// <summary>
+        /// Solves the problem. Requires that the input for the problem has been set.
+        /// </summary>
         public void Solve()
         {
             if(String.IsNullOrWhiteSpace(_input))
@@ -36,6 +36,10 @@ namespace AdventOfCode2021.Common
             }
         }
 
+        /// <summary>
+        /// Get the result to the solved problem. Requires that the problem has been solved.
+        /// </summary>
+        /// <returns>The answer to the solved problem.</returns>
         public string GetAnswer()
         {
             if (String.IsNullOrWhiteSpace(_result))
@@ -48,6 +52,9 @@ namespace AdventOfCode2021.Common
             }
         }
 
+        /// <summary>
+        /// Loads the input to the problem from local file in the Input folder.
+        /// </summary>
         public void GetInputFromFile()
         {
             string currentDirectoryPath = Directory.GetCurrentDirectory();
@@ -71,6 +78,10 @@ namespace AdventOfCode2021.Common
             }
         }
 
+        /// <summary>
+        /// Sets the input for the problem.
+        /// </summary>
+        /// <param name="input">The value to set the problems input to.</param>
         public void SetInput(string input)
         {
             if(String.IsNullOrWhiteSpace(input))
@@ -99,19 +110,6 @@ namespace AdventOfCode2021.Common
         public abstract string ProblemName
         {
             get;
-        }
-
-        public static IEnumerable<T> EnumerateProblems<T>() where T : Problem
-        {
-            List<T> problems = new List<T>();
-            foreach (Type type in
-                Assembly.GetAssembly(typeof(T)).GetTypes()
-                .Where(myType => myType.IsClass && !myType.IsAbstract && myType.IsSubclassOf(typeof(T))))
-            {
-                problems.Add((T)Activator.CreateInstance(type));
-            }
-            problems.OrderBy(p => p.ProblemNumber);
-            return problems;
         }
     }
 }
