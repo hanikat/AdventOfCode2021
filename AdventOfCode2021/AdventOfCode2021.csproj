@@ -18,6 +18,8 @@
     <None Remove="Problems\Problem 3 %28copy%29\" />
     <None Remove="Problems\Problem 4 %28copy%29\" />
     <None Remove="Problems\Problem 5 %28copy%29\" />
+    <None Remove="Problems\Problem 6 %28copy%29\" />
+    <None Remove="Problems\Problem 8\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Answers\" />
@@ -30,5 +32,7 @@
     <Folder Include="Problems\Problem 4\" />
     <Folder Include="Problems\Problem 5\" />
     <Folder Include="Problems\Problem 6\" />
+    <Folder Include="Problems\Problem 7\" />
+    <Folder Include="Problems\Problem 8\" />
   </ItemGroup>
 </Project>
