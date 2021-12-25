@@ -15,7 +15,7 @@ namespace AdventOfCode2021
             Console.WriteLine("----- ----- ------");
 
             // prompt the user for which problem to solve
-            var problems = Utility.EnumerateProblems<Problem>().ToList();
+            var problems = Utility.EnumerateProblems<Problem>().OrderBy(p => p.ProblemNumber).ToList();
             int problemNumberToSolve = GetSelectedProblem(problems);
             Problem problemToSolve = problems[problemNumberToSolve];
 
