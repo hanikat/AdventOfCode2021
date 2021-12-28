@@ -32,6 +32,11 @@ namespace AdventOfCode2021.Common
             return listOfIntegers;
         }
 
+        public static string[] SplitByDelimiter(string input, string delimiter)
+        {
+            return input.Split(delimiter);
+        }
+
         public static IEnumerable<T> EnumerateProblems<T>() where T : Problem
         {
             List<T> problems = new List<T>();
