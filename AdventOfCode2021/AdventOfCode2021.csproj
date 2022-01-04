@@ -33,6 +33,7 @@
     <None Remove="Problems\Problem 19 %28copy%29\" />
     <None Remove="Problems\Problem 20 %28copy%29\" />
     <None Remove="Problems\Problem 21 %28copy%29\" />
+    <None Remove="Problems\Problem 23 %28copy%29\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Answers\" />
@@ -60,6 +61,11 @@
     <Folder Include="Problems\Problem 19\" />
     <Folder Include="Problems\Problem 20\" />
     <Folder Include="Problems\Problem 21\" />
-    <Folder Include="Problems\Problem 22\" />
+    <Folder Include="Problems\Problem 23\" />
+    <Folder Include="Problems\Problem 24\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Problems\Problem 21 %28copy%29\DumboOctupusSchool.cs" />
+    <Compile Remove="Problems\Problem 21 %28copy%29\Problem21.cs" />
   </ItemGroup>
 </Project>
