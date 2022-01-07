@@ -37,9 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Answers\" />
-    <Folder Include="Input\" />
     <Folder Include="Common\" />
-    <Folder Include="Problems\" />
     <Folder Include="Problems\Problem 1\" />
     <Folder Include="Problems\Problem 2\" />
     <Folder Include="Problems\Problem 3\" />

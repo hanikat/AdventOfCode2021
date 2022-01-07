@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace AdventOfCode2021.Common
 {
@@ -58,8 +59,19 @@ namespace AdventOfCode2021.Common
         public void GetInputFromFile()
         {
             string currentDirectoryPath = Directory.GetCurrentDirectory();
-            string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("/bin"));
-            string expectedFilePath = Path.Combine(solutionDirectoryPath, $"Input/Problem{ProblemNumber}-input.txt");
+            string expectedFilePath = "";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("\\bin"));
+                expectedFilePath = Path.Combine(solutionDirectoryPath, $"Input\\Problem{ProblemNumber}-input.txt");
+            }
+            else
+            {
+                string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("/bin"));
+                expectedFilePath = Path.Combine(solutionDirectoryPath, $"Input/Problem{ProblemNumber}-input.txt");
+            }
+             
             if(!File.Exists(expectedFilePath))
             {
                 throw new Exception($"The expected input file was not found at path: {expectedFilePath}");
@@ -97,8 +109,19 @@ namespace AdventOfCode2021.Common
         private void WriteAnswerToFile(string answer)
         {
             string currentDirectoryPath = Directory.GetCurrentDirectory();
-            string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("/bin"));
-            string resultFilePath = Path.Combine(solutionDirectoryPath, $"Answers/Problem{ProblemNumber}-answer.txt");
+            string resultFilePath = "";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("\\bin"));
+                resultFilePath = Path.Combine(solutionDirectoryPath, $"Answers\\Problem{ProblemNumber}-answer.txt");
+            }
+            else
+            {
+                string solutionDirectoryPath = currentDirectoryPath.Substring(0, currentDirectoryPath.LastIndexOf("/bin"));
+                resultFilePath = Path.Combine(solutionDirectoryPath, $"Answers/Problem{ProblemNumber}-answer.txt");
+            }
+            
             File.WriteAllText(resultFilePath, answer, System.Text.Encoding.UTF8);
         }
 
